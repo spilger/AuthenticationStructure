@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct EntryView: View {
+    
+    @State private var animationComplete: Bool = false
+    
     @ViewBuilder var body: some View {
-        Text("Hello, world")
-            .padding()
+        
+        if self.animationComplete {
+            NavigationView {
+                if app_password == nil {
+                    SetAppPasswordView()
+                } else {
+                    AppLoginView(restartApp: self.$animationComplete)
+                }
+            }
+        } else {
+            Text("Animation").onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.animationComplete = true
+                }
+            }
+        }
     }
 }
 
