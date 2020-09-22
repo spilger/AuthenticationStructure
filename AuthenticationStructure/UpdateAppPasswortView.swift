@@ -22,7 +22,7 @@ struct UpdateAppPasswortView: View {
                     SecureField("", text: self.$oldPassword).textFieldStyle(RoundedBorderTextFieldStyle())
                         .disabled(self.oldPassword == app_password)
                     
-//                    if self.oldPassword == app_password {
+                    if self.oldPassword == app_password {
                         Text("Neues Passwort")
                         SecureField("", text: self.$password).textFieldStyle(RoundedBorderTextFieldStyle())
 
@@ -33,7 +33,7 @@ struct UpdateAppPasswortView: View {
                             setAppPassword(password: self.password)
                             self.presentationMode.wrappedValue.dismiss()
                         }.disabled(!appPasswordIsValid(password: self.password, passwordRepeat: self.passwordRepeat))
-//                    }
+                    }
 
                 }.padding()
             }
