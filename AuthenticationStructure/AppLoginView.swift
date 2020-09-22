@@ -40,8 +40,21 @@ struct AppLoginView: View {
                         }
                     }.padding()
                 }
-                .navigationBarTitle("App Anmeldung", displayMode: .large)
+                .navigationBarTitle("App Passwort", displayMode: .large)
                 .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
+            }
+        }
+    }
+}
+
+struct AppLoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            NavigationView {
+                AppLoginView(restartApp: .constant(false))
+            }
+            NavigationView {
+                AppLoginView(restartApp: .constant(false)).environment(\.colorScheme, .dark)
             }
         }
     }

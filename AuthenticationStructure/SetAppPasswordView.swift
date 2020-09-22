@@ -40,10 +40,10 @@ struct SetAppPasswordView: View {
                     SecureField("", text: self.$passwordRepeat).textFieldStyle(RoundedBorderTextFieldStyle())
 
                     if biometricsAuthenticationEnabledOrRequestable() {
-                        Toggle("Face ID", isOn: useBiometricsAuthenticationToggleWithOnChange)
+                        Toggle(getBiometricsAuthenticationMethod(), isOn: useBiometricsAuthenticationToggleWithOnChange)
                     }
 
-                    Button("Passwort setzen") {
+                    Button(!appPasswordIsValid(password: self.password, passwordRepeat: self.passwordRepeat) ? "Ungültige Eingabe" : "Passwort festlegen") {
                         setAppPassword(password: self.password)
                         self.didSetPassword = true
                     }.disabled(!appPasswordIsValid(password: self.password, passwordRepeat: self.passwordRepeat))
@@ -58,8 +58,13 @@ struct SetAppPasswordView: View {
 
 struct SetAppPasswordView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            SetAppPasswordView()
+        Group {
+            NavigationView {
+                SetAppPasswordView()
+            }
+            NavigationView {
+                SetAppPasswordView().environment(\.colorScheme, .dark)
+            }
         }
     }
 }

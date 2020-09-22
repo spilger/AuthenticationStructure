@@ -18,22 +18,22 @@ struct UpdateAppPasswortView: View {
         NavigationView {
             ScrollView {
                 VStack (alignment: .leading) {
-                    Text("Altes Passwort angeben")
+                    Text("Altes Passwort")
                     SecureField("", text: self.$oldPassword).textFieldStyle(RoundedBorderTextFieldStyle())
                         .disabled(self.oldPassword == app_password)
                     
-                    if self.oldPassword == app_password {
+//                    if self.oldPassword == app_password {
                         Text("Neues Passwort")
                         SecureField("", text: self.$password).textFieldStyle(RoundedBorderTextFieldStyle())
 
                         Text("Neues Passwort wiedeholen")
                         SecureField("", text: self.$passwordRepeat).textFieldStyle(RoundedBorderTextFieldStyle())
 
-                        Button("Neues Passwort setzen") {
+                        Button(!appPasswordIsValid(password: self.password, passwordRepeat: self.passwordRepeat) ? "Ungültige Eingabe" : "Passwort festlegen") {
                             setAppPassword(password: self.password)
                             self.presentationMode.wrappedValue.dismiss()
                         }.disabled(!appPasswordIsValid(password: self.password, passwordRepeat: self.passwordRepeat))
-                    }
+//                    }
 
                 }.padding()
             }
@@ -45,6 +45,9 @@ struct UpdateAppPasswortView: View {
 
 struct UpdateAppPasswortView_Previews: PreviewProvider {
     static var previews: some View {
-        UpdateAppPasswortView()
+        Group {
+            UpdateAppPasswortView()
+            UpdateAppPasswortView().environment(\.colorScheme, .dark)
+        }
     }
 }

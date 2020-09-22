@@ -188,3 +188,14 @@ func changeUseBiometricsAuthentication (to: Bool) -> Bool {
     
     return true
 }
+
+func getBiometricsAuthenticationMethod () -> String {
+    switch LAContext().biometryType {
+    case .faceID:
+        return "Face ID"
+    case .touchID:
+        return "Touch ID"
+    default:
+        return "Biometrische Authentifizierung"
+    }
+}

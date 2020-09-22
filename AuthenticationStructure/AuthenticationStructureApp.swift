@@ -45,6 +45,7 @@ func pre_start_setup() {
     if biometricsAuthenticationEnabledOrRequestable() {
         useBiometricsAuthentication = UserDefaults.standard.bool(forKey: "useBiometricsAuthentication")
     }
+    print(getBiometricsAuthenticationMethod())
 }
 
 func storeLoggedInUser () {

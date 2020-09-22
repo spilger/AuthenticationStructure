@@ -13,10 +13,18 @@ struct MainView: View {
     
     var body: some View {
         VStack {
-            Text("Hallo")
+            Text("Nutzer mit E-Mail Adresse")
             Text(loggedInUser.emailAddress)
+            Text("ist angemeldet")
         }
         .navigationBarTitle("Startseite", displayMode: .inline)
-        .navigationBarItems(leading: EmptyView(), trailing: NavigationLink(destination: SettingsView(userIsLoggedIn: self.$userIsLoggedIn), label: {Image(systemName: "ellipsis.circle")}))
+        .navigationBarItems(
+            leading: EmptyView(),
+            trailing:
+                NavigationLink(
+                    destination: SettingsView(userIsLoggedIn: self.$userIsLoggedIn),
+                    label: {Image(systemName: "ellipsis.circle")}
+                )
+        )
     }
 }

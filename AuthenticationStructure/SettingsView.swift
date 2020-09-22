@@ -46,12 +46,6 @@ struct SettingsView: View {
             }
             
             Section {
-                Toggle(isOn: useBiometricsAuthenticationToggleWithOnChange) {
-                    Text("Face ID").foregroundColor(biometricsAuthenticationEnabledOrRequestable() ? .primary : .gray)
-                }.disabled(!biometricsAuthenticationEnabledOrRequestable())
-            }
-            
-            Section {
                 Button(
                     action: {
                         self.sheetForAppPasswordChange = true
@@ -64,6 +58,12 @@ struct SettingsView: View {
                         }
                     }
                 )
+            }
+            
+            Section {
+                Toggle(isOn: useBiometricsAuthenticationToggleWithOnChange) {
+                    Text(getBiometricsAuthenticationMethod()).foregroundColor(biometricsAuthenticationEnabledOrRequestable() ? .primary : .gray)
+                }.disabled(!biometricsAuthenticationEnabledOrRequestable())
             }
             
             Section {
@@ -115,6 +115,13 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(userIsLoggedIn: .constant(true))
+        Group {
+            NavigationView {
+                SettingsView(userIsLoggedIn: .constant(true))
+            }
+            NavigationView {
+                SettingsView(userIsLoggedIn: .constant(true)).environment(\.colorScheme, .dark)
+            }
+        }
     }
 }

@@ -17,6 +17,8 @@ struct UserLoginView: View {
     @State private var rememberLoginInformation: Bool = false
     @State private var triedAutoLoginAndFailed: Bool = false
     
+    @State private var alertLoginFailed: Bool = false
+    
     @ViewBuilder var body: some View {
         if self.loginSuccessful {
             MainView(userIsLoggedIn: self.$loginSuccessful)
@@ -34,7 +36,7 @@ struct UserLoginView: View {
 
                     Toggle("Anmeldedaten merken?", isOn: self.$rememberLoginInformation)
 
-                    Button("Anmelden") {
+                    Button((self.emailAddress == "" || password == "") ? "Ungültige Eingabe" : "Anmelden") {
                         rememberUserLoginInformation = self.rememberLoginInformation
 
                         let loginResponse = initial_login(email_address: self.emailAddress, password: self.password)
@@ -44,13 +46,20 @@ struct UserLoginView: View {
                             self.password = ""
                             self.loginSuccessful = true
                         } else {
-                            print(loginResponse.errorMessage)
+                            self.alertLoginFailed = true
                         }
                     }.disabled(self.emailAddress == "" || password == "")
                 }.padding()
             }
-            .navigationBarTitle("Benutzer Anmeldung", displayMode: .large)
+            .navigationBarTitle("Benutzerkonto", displayMode: .large)
             .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
+            .alert(isPresented: self.$alertLoginFailed) {
+                Alert(
+                    title: Text("Anmeldung fehlgeschlagen"),
+                    message: Text("Dies kann verschiedene Gründe haben"),
+                    dismissButton: Alert.Button.cancel(Text("Erneut versuchen"))
+                )
+            }
         } else {
             ActivityIndicatorView(isAnimating: true).onAppear {
                 if update_login() {
@@ -67,8 +76,13 @@ struct UserLoginView: View {
 
 struct UserLoginView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            UserLoginView()
+        Group {
+            NavigationView {
+                UserLoginView()
+            }
+            NavigationView {
+                UserLoginView().environment(\.colorScheme, .dark)
+            }
         }
     }
 }
