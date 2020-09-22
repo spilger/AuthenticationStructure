@@ -11,7 +11,7 @@ struct SetAppPasswordView: View {
     
     @State private var password: String = ""
     @State private var passwordRepeat: String = ""
-    @State private var useBiometricsAuthenticationToggle: Bool = false
+    @State private var useBiometricsAuthenticationToggle: Bool = useBiometricsAuthentication
     
     @State private var didSetPassword: Bool = false
     
@@ -22,13 +22,8 @@ struct SetAppPasswordView: View {
                 self.useBiometricsAuthenticationToggle
             }, set: {
                 self.useBiometricsAuthenticationToggle = $0
-                if $0 {
-                    let myTry = biometricsAuthentication()
-                    if myTry {
-                        
-                    } else {
-                        self.useBiometricsAuthenticationToggle = false
-                    }
+                if !changeUseBiometricsAuthentication(to: $0) {
+                    self.useBiometricsAuthenticationToggle = false
                 }
             }
         )

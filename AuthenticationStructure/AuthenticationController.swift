@@ -173,3 +173,18 @@ func biometricsAuthentication () -> Bool {
     
     return successfulAuthenticated
 }
+
+func changeUseBiometricsAuthentication (to: Bool) -> Bool {
+    if to {
+        let myTry = biometricsAuthentication()
+        if myTry {
+            UserDefaults.standard.setValue(true, forKey: "useBiometricsAuthentication")
+        } else {
+            return false
+        }
+    } else {
+        UserDefaults.standard.setValue(false, forKey: "useBiometricsAuthentication")
+    }
+    
+    return true
+}

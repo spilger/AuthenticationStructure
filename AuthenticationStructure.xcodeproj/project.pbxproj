@@ -15,6 +15,8 @@
 		2EA2EB10251A113C00CE6939 /* AuthenticationStructureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2EB0F251A113C00CE6939 /* AuthenticationStructureUITests.swift */; };
 		322AF062251A351D00BC22DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322AF061251A351D00BC22DE /* MainView.swift */; };
 		322AF067251A3D4000BC22DE /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322AF066251A3D4000BC22DE /* ActivityIndicatorView.swift */; };
+		327AC4AA251A9B1E002C90DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327AC4A9251A9B1E002C90DD /* SettingsView.swift */; };
+		327AC4AF251AA91F002C90DD /* UpdateAppPasswortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327AC4AE251AA91F002C90DD /* UpdateAppPasswortView.swift */; };
 		32944743251A1D5A002F9F06 /* SetAppPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32944742251A1D5A002F9F06 /* SetAppPasswordView.swift */; };
 		32944748251A1D76002F9F06 /* AppLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32944747251A1D76002F9F06 /* AppLoginView.swift */; };
 		32944750251A200B002F9F06 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294474F251A200B002F9F06 /* AuthenticationController.swift */; };
@@ -53,6 +55,8 @@
 		2EA2EB11251A113C00CE6939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		322AF061251A351D00BC22DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		322AF066251A3D4000BC22DE /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		327AC4A9251A9B1E002C90DD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		327AC4AE251AA91F002C90DD /* UpdateAppPasswortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAppPasswortView.swift; sourceTree = "<group>"; };
 		32944742251A1D5A002F9F06 /* SetAppPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAppPasswordView.swift; sourceTree = "<group>"; };
 		32944747251A1D76002F9F06 /* AppLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoginView.swift; sourceTree = "<group>"; };
 		3294474F251A200B002F9F06 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				32944747251A1D76002F9F06 /* AppLoginView.swift */,
 				32944754251A2541002F9F06 /* UserLoginView.swift */,
 				322AF061251A351D00BC22DE /* MainView.swift */,
+				327AC4A9251A9B1E002C90DD /* SettingsView.swift */,
+				327AC4AE251AA91F002C90DD /* UpdateAppPasswortView.swift */,
 				2EA2EAF6251A113C00CE6939 /* Assets.xcassets */,
 				2EA2EAFB251A113C00CE6939 /* Info.plist */,
 				2EA2EAF8251A113C00CE6939 /* Preview Content */,
@@ -280,8 +286,10 @@
 				2EA2EAF5251A113B00CE6939 /* EntryView.swift in Sources */,
 				322AF062251A351D00BC22DE /* MainView.swift in Sources */,
 				32944743251A1D5A002F9F06 /* SetAppPasswordView.swift in Sources */,
+				327AC4AA251A9B1E002C90DD /* SettingsView.swift in Sources */,
 				322AF067251A3D4000BC22DE /* ActivityIndicatorView.swift in Sources */,
 				32944748251A1D76002F9F06 /* AppLoginView.swift in Sources */,
+				327AC4AF251AA91F002C90DD /* UpdateAppPasswortView.swift in Sources */,
 				32944755251A2541002F9F06 /* UserLoginView.swift in Sources */,
 				32944750251A200B002F9F06 /* AuthenticationController.swift in Sources */,
 				2EA2EAF3251A113B00CE6939 /* AuthenticationStructureApp.swift in Sources */,
@@ -443,7 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AuthenticationStructure/Preview Content\"";
-				DEVELOPMENT_TEAM = 9QNAQ47G4N;
+				DEVELOPMENT_TEAM = ZK2MG3TWVQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AuthenticationStructure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -451,7 +459,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = spiko.test.AuthenticationStructureT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.yilmaz.cem.authhenticationStructure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,9 +472,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"AuthenticationStructure/Preview Content\"";
-				DEVELOPMENT_TEAM = 95E77V6B7D;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AuthenticationStructure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

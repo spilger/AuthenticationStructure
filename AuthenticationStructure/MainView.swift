@@ -13,12 +13,10 @@ struct MainView: View {
     
     var body: some View {
         VStack {
+            Text("Hallo")
             Text(loggedInUser.emailAddress)
-            
-            Button("Abmelden") {
-                self.userIsLoggedIn = false
-                logUserOut()
-            }
         }
+        .navigationBarTitle("Startseite", displayMode: .inline)
+        .navigationBarItems(leading: EmptyView(), trailing: NavigationLink(destination: SettingsView(userIsLoggedIn: self.$userIsLoggedIn), label: {Image(systemName: "ellipsis.circle")}))
     }
 }

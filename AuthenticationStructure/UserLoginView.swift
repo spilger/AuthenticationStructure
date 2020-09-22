@@ -24,7 +24,10 @@ struct UserLoginView: View {
             ScrollView {
                 VStack (alignment: .leading) {
                     Text("E-Mail Adresse")
-                    TextField("", text: self.$emailAddress).textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("", text: self.$emailAddress)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .keyboardType(.emailAddress)
+                        .autocapitalization(.none)
 
                     Text("Passwort")
                     SecureField("", text: self.$password).textFieldStyle(RoundedBorderTextFieldStyle())

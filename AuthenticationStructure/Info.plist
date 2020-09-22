@@ -30,6 +30,8 @@
 			<string></string>
 		</dict>
 	</dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>App Login</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -56,7 +58,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSFaceIDUsageDescription</key>
-	<string>App Login</string>
 </dict>
 </plist>

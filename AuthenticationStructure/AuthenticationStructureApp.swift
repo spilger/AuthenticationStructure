@@ -27,6 +27,7 @@ import SwiftUI
 var app_password: String!
 var loggedInUser: User!
 var rememberUserLoginInformation: Bool = false
+var useBiometricsAuthentication: Bool = false
 
 func pre_start_setup() {
     if let data = UserDefaults.standard.string(forKey: "app_password") {
@@ -39,6 +40,10 @@ func pre_start_setup() {
             loggedInUser = stored_customer_account
             rememberUserLoginInformation = true
         }
+    }
+    
+    if biometricsAuthenticationEnabledOrRequestable() {
+        useBiometricsAuthentication = UserDefaults.standard.bool(forKey: "useBiometricsAuthentication")
     }
 }
 
