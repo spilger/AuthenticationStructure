@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EntryView: View {
-    var body: some View {
+    @ViewBuilder var body: some View {
         Text("Hello, world")
             .padding()
     }

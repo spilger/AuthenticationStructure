@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2EA2EAF3251A113B00CE6939 /* AuthenticationStructureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2EAF2251A113B00CE6939 /* AuthenticationStructureApp.swift */; };
-		2EA2EAF5251A113B00CE6939 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2EAF4251A113B00CE6939 /* ContentView.swift */; };
+		2EA2EAF5251A113B00CE6939 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2EAF4251A113B00CE6939 /* EntryView.swift */; };
 		2EA2EAF7251A113C00CE6939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA2EAF6251A113C00CE6939 /* Assets.xcassets */; };
 		2EA2EAFA251A113C00CE6939 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA2EAF9251A113C00CE6939 /* Preview Assets.xcassets */; };
 		2EA2EB05251A113C00CE6939 /* AuthenticationStructureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA2EB04251A113C00CE6939 /* AuthenticationStructureTests.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		2EA2EAEF251A113B00CE6939 /* AuthenticationStructure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthenticationStructure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EA2EAF2251A113B00CE6939 /* AuthenticationStructureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStructureApp.swift; sourceTree = "<group>"; };
-		2EA2EAF4251A113B00CE6939 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2EA2EAF4251A113B00CE6939 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		2EA2EAF6251A113C00CE6939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EA2EAF9251A113C00CE6939 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2EA2EAFB251A113C00CE6939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				2EA2EAF2251A113B00CE6939 /* AuthenticationStructureApp.swift */,
-				2EA2EAF4251A113B00CE6939 /* ContentView.swift */,
+				2EA2EAF4251A113B00CE6939 /* EntryView.swift */,
 				2EA2EAF6251A113C00CE6939 /* Assets.xcassets */,
 				2EA2EAFB251A113C00CE6939 /* Info.plist */,
 				2EA2EAF8251A113C00CE6939 /* Preview Content */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EA2EAF5251A113B00CE6939 /* ContentView.swift in Sources */,
+				2EA2EAF5251A113B00CE6939 /* EntryView.swift in Sources */,
 				2EA2EAF3251A113B00CE6939 /* AuthenticationStructureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
