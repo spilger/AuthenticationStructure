@@ -23,7 +23,12 @@ struct SetAppPasswordView: View {
             }, set: {
                 self.useBiometricsAuthenticationToggle = $0
                 if $0 {
-                    print(biometricsAuthentication())
+                    let myTry = biometricsAuthentication()
+                    if myTry {
+                        
+                    } else {
+                        self.useBiometricsAuthenticationToggle = false
+                    }
                 }
             }
         )
