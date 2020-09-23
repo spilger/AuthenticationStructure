@@ -23,6 +23,7 @@ func resetApp () {
 }
 
 
+
 // MARK: User Login Functions
 
 let endpoint = "http://invoice-to-insurance.000webhostapp.com/"
@@ -196,6 +197,6 @@ func getBiometricsAuthenticationMethod () -> String {
     case .touchID:
         return "Touch ID"
     default:
-        return "Biometrische Authentifizierung"
+        return "Bio Authentication"
     }
 }

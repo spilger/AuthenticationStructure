@@ -16,9 +16,9 @@ struct SettingsView: View {
     @State private var actionSheetForUserLogout: Bool = false
     @State private var sheetForAppPasswordChange: Bool = false
     
-    var body: some View {
+    @ViewBuilder var body: some View {
         
-        var useBiometricsAuthenticationToggleWithOnChange = Binding<Bool>(
+        let useBiometricsAuthenticationToggleWithOnChange = Binding<Bool>(
             get: {
                 self.useBiometricsAuthenticationToggle
             }, set: {
@@ -82,6 +82,8 @@ struct SettingsView: View {
             }
         }
         .listStyle(GroupedListStyle())
+        .navigationBarTitle("Einstellungen", displayMode: .large)
+        .navigationBarItems(leading: EmptyView(), trailing: EmptyView())
         .alert(isPresented: self.$alertForToSettings) {
             Alert(
                 title: Text("Sytemeinstellungen"),

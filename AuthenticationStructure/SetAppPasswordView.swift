@@ -17,7 +17,7 @@ struct SetAppPasswordView: View {
     
     @ViewBuilder var body: some View {
         
-        var useBiometricsAuthenticationToggleWithOnChange = Binding<Bool>(
+        let useBiometricsAuthenticationToggleWithOnChange = Binding<Bool>(
             get: {
                 self.useBiometricsAuthenticationToggle
             }, set: {
